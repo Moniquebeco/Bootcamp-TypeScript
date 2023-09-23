@@ -4,34 +4,31 @@ export abstract class DioAccount {
     private status: boolean = true;
     balance: number = 0;
 
-    constructor(name: string, accountNumber: number) {
+    constructor(name: string, accountNumber: number, status: boolean) {
         this.name = name;
         this.accountNumber = accountNumber;
+        this.status = status;
     }
+    deposit = (value: number): void => {
+        if (this.validateStatus()) {
+            this.balance += value;
+            console.log('Você depositou');
+        } else {
+            console.log("Conta inativa!");
+        }
+    }
+
 
     getName = (): string => {
         return this.name
     }
 
-    // setName = (name: string): void => {
-    //     this.name = name
-    //     console.log('Nome alterado com sucesso');
-    // }
-
-    // deposit = (depositValue: number): number => {
-    //     if (this.validateStatus()) {
-    //         this.setBalance(this.getBalance() + depositValue);
-    //         console.log('Depósito realizado com sucesso! Seu saldo agora é de: ' + this.getBalance());
-    //     }
-    //     return depositValue
-    // }
-
-    withDraw = (withDrawValue: number): void => {
-        if (this.validateStatus() && this.getBalance() - withDrawValue < 0) {
+    withdraw = (withdrawValue: number): void => {
+        if (this.validateStatus() && this.getBalance() - withdrawValue < 0) {
             console.log('Saque falhou - Saldo insuficiente');
         }
-        this.setBalance(this.getBalance() - withDrawValue);
-        console.log(`Saque no valor de ${withDrawValue}.`);
+        this.setBalance(this.getBalance() - withdrawValue);
+        console.log(`Saque no valor de ${withdrawValue}.`);
         console.log(`Seu saldo atual é de: ${this.getBalance()}`);
     }
 

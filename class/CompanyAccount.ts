@@ -3,8 +3,8 @@ import { DioAccount } from "./DioAccount";
 export class CompanyAccount extends DioAccount {
     loan: number = 0;
 
-    constructor(name:string, accountNumber: number){
-        super(name, accountNumber)
+    constructor(name:string, accountNumber: number, status: boolean){
+        super(name, accountNumber, status)
     }
 
     getLoan = ( loanValue: number): void => {
@@ -14,7 +14,7 @@ export class CompanyAccount extends DioAccount {
         }
     }
 
-    deposit = (): number => {
-        return 0
-    }
+    // deposit = (): number => {
+    //     return 0
+    // }
 }

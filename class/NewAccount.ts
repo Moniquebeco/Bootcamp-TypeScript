@@ -1,8 +1,8 @@
 import { DioAccount } from "./DioAccount"
 
 export class NewAccount extends DioAccount {
-    constructor(name: string, accountNumber: number) {
-        super(name, accountNumber)
+    constructor(name: string, accountNumber: number, status: boolean) {
+        super(name, accountNumber, status)
     }
 
     deposit = (value: number): void => {
