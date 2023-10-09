@@ -1,0 +1,163 @@
+{
+  "tldrawFileFormatVersion": 1,
+  "schema": {
+    "schemaVersion": 1,
+    "storeVersion": 4,
+    "recordVersions": {
+      "asset": {
+        "version": 1,
+        "subTypeKey": "type",
+        "subTypeVersions": {
+          "image": 2,
+          "video": 2,
+          "bookmark": 0
+        }
+      },
+      "camera": {
+        "version": 1
+      },
+      "document": {
+        "version": 2
+      },
+      "instance": {
+        "version": 17
+      },
+      "instance_page_state": {
+        "version": 3
+      },
+      "page": {
+        "version": 1
+      },
+      "shape": {
+        "version": 3,
+        "subTypeKey": "type",
+        "subTypeVersions": {
+          "group": 0,
+          "embed": 4,
+          "bookmark": 1,
+          "image": 2,
+          "text": 1,
+          "draw": 1,
+          "geo": 7,
+          "line": 0,
+          "note": 4,
+          "frame": 0,
+          "arrow": 1,
+          "highlight": 0,
+          "video": 1
+        }
+      },
+      "instance_presence": {
+        "version": 4
+      },
+      "pointer": {
+        "version": 1
+      }
+    }
+  },
+  "records": [
+    {
+      "gridSize": 10,
+      "name": "",
+      "meta": {},
+      "id": "document:document",
+      "typeName": "document"
+    },
+    {
+      "id": "pointer:pointer",
+      "typeName": "pointer",
+      "x": -2538.141086483405,
+      "y": -288.0889988740579,
+      "lastActivityTimestamp": 1695420858413,
+      "meta": {}
+    },
+    {
+      "meta": {},
+      "id": "page:hWmD2zst0HFrz1HpDqHY3",
+      "name": "Page 1",
+      "index": "a1",
+      "typeName": "page"
+    },
+    {
+      "x": 4465.941009991664,
+      "y": 1015.7389750510389,
+      "z": 0.1481481571924609,
+      "meta": {},
+      "id": "camera:page:hWmD2zst0HFrz1HpDqHY3",
+      "typeName": "camera"
+    },
+    {
+      "editingId": null,
+      "croppingId": null,
+      "selectedIds": [],
+      "hoveredId": null,
+      "erasingIds": [],
+      "hintingIds": [],
+      "focusLayerId": null,
+      "meta": {},
+      "id": "instance_page_state:page:hWmD2zst0HFrz1HpDqHY3",
+      "pageId": "page:hWmD2zst0HFrz1HpDqHY3",
+      "typeName": "instance_page_state"
+    },
+    {
+      "followingUserId": null,
+      "opacityForNextShape": 0.5,
+      "stylesForNextShape": {
+        "tldraw:horizontalAlign": "start",
+        "tldraw:font": "serif",
+        "tldraw:color": "light-red",
+        "tldraw:fill": "none"
+      },
+      "brush": null,
+      "scribble": null,
+      "cursor": {
+        "type": "default",
+        "color": "black",
+        "rotation": 0
+      },
+      "isFocusMode": false,
+      "exportBackground": true,
+      "isDebugMode": false,
+      "isToolLocked": false,
+      "screenBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 744,
+        "h": 385.6000061035156
+      },
+      "zoomBrush": null,
+      "isGridMode": false,
+      "isPenMode": false,
+      "chatMessage": "",
+      "isChatting": false,
+      "highlightedUserIds": [],
+      "meta": {},
+      "id": "instance:instance",
+      "currentPageId": "page:hWmD2zst0HFrz1HpDqHY3",
+      "typeName": "instance"
+    },
+    {
+      "x": -1629.560066269456,
+      "y": -500.0391507296114,
+      "rotation": 0,
+      "isLocked": false,
+      "opacity": 1,
+      "meta": {},
+      "type": "text",
+      "props": {
+        "color": "black",
+        "size": "m",
+        "w": 1811.6375732421875,
+        "text": "Os pilares da Programação Orientada a Objetos são:\n\n\n1- Encapsulamento\n\né tornar um método ou atributo como \"privado\" para protegê-lo..\nquando tornamos algo como \"protected\" significa que só os filhos a nível de pacote podem herdar.\n\n\n2- Herança\n\né \"extender\" uma classe para utilizar o que tem nela, só que em uma classe filha.\ncomo não é possivel existir herança múltipla.. usamos a \"interface\",\nque engloba várias classes e métodos em um só lugar,\ntornando possível \"implementar\" para utilizar seus recursos englobados.\n\n\n3- Abstração\n\né quando as classes derivadas de uma única classe base \"abstrata\", são capazes de invocar os métodos que têm o mesmo nome e entregam o mesmo resultado.\nmétodos abstratos possuem o corpo vazio, pois são somente usados como referência.\nusar abstração é uma boa prática para não ter que repetir código.\n\n\n4- Polimorfismo\n\né quando as classes derivadas de uma única classe base são capazes de invocar os métodos que têm o mesmo nome porém entregam resultados diferentes.",
+        "font": "serif",
+        "align": "start",
+        "autoSize": true,
+        "scale": 1
+      },
+      "parentId": "page:hWmD2zst0HFrz1HpDqHY3",
+      "index": "a1",
+      "id": "shape:wibLhdj_n8BUqdbcqleIs",
+      "typeName": "shape"
+    }
+  ]
+}

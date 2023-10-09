@@ -1,109 +1,34 @@
-// OBJETOS E INTERFACES
-// interface Pessoa {
-//     //Definindo tipos
-//     nome: string,
-//     idade: number,
-//     // Criando uma propriendade opcional
-//     profissao?: string
-// }
+import { CompanyAccount } from './class/CompanyAccount';
+import { PeopleAccount } from './class/PeopleAccount';
+import { NewAccount } from './class/NewAccount';
 
-// const pessoa: Pessoa = {
-//     nome: "Monique",
-//     idade: 22
-// }
+const peopleAccount: PeopleAccount = new PeopleAccount(1, 'Monique', 10, true);
+const companyAccount: CompanyAccount = new CompanyAccount('DIO', 20, true);
+const newAccount: NewAccount = new NewAccount('N-DIO', 40, true);
 
-// const pessoa2: Pessoa = {
-//     nome: "Paula",
-//     idade: 25,
-//     profissao: 'Pedagoga'
-// }
-// //TIPAGEM DE ARRAY
-// //Maneira 1 de definir valores para o array
-// // const arrayPessoa: Pessoa[] = [ // O array só vai aceitar objetos do tipo Pessoa
-// //     pessoa, pessoa2
-// // ]
+peopleAccount.deposit(100)
+peopleAccount.getBalance();
 
-// //Maneira 2 de definir valores para o array
-// const arrayPessoa: Array<Pessoa> = [ // O array só vai aceitar objetos do tipo Pessoa indicado dentro do operador diamante
-//     pessoa, 
-//     pessoa2
-// ]
+peopleAccount.withdraw(150) 
+peopleAccount.getBalance();
+peopleAccount.withdraw(80)
+peopleAccount.getBalance();
 
-// const arrayNum: number[] = [
-//     1, 2, 3
-// ]
+companyAccount.deposit(250)
+companyAccount.getBalance();
 
-// const arrayString: string[] = [
-//     '1', '2', '3'
-// ]
+companyAccount.getLoan(500);
+companyAccount.getBalance();
 
-// console.log(arrayPessoa);
+newAccount.deposit(100.00);
+newAccount.getBalance();
 
-//DECISÕES E REPETIÇÕES
-// const typeUser = {
-//     admin: "Seja bem vindo admin",
-//     studant: "Você é um estudante",
-//     viewer: "Você pode vizualizar"
-// }
+const inactivePeopleAccount: PeopleAccount = new PeopleAccount(1, 'Alice', 10, false);
+const inactiveCompanyAccount: CompanyAccount = new CompanyAccount('DIO-2', 20, false);
+const inactiveNewAccount: NewAccount = new NewAccount('N-DIO-2', 40, false);
 
-// function validateUser(user:string){
-//     console.log(typeUser[user as keyof typeof typeUser]);// diz que a variavel user é do tipo keyof para o tipo typeUser
-    
-// }
+// inactivePeopleAccount.deposit(200);
+// inactiveNewAccount.deposit(300);
+// inactiveCompanyAccount.withdraw(10);
+// inactiveCompanyAccount.getLoan(10);
 
-// const usuario = 'admin'
-// validateUser(usuario)
-// validateUser('studant')
-// validateUser('viewer')
-
-
-//ESTRUTURA DE REPETIÇÃO
-// for(let i = 0; i < 5; i++){
-//     console.log(i);
-// }
-
-// let n = 2
-// while(n < 6){
-//     console.log(n);
-//     n++;
-// }
-
-//ARRAY
-// const array: Array<number> = [
-//     1, 2, 3, 4
-// ]
-
-// const stringArray: string[] = [
-//     'a', 'b','c'
-// ]
-
-// //Adicionando elemento novo ao array na ultima posição
-// console.log("Array original", array);
-// array.push(5)
-// console.log('Array com novo elemento', array);
-
-// //Removendo elemento do array na ultima posição
-// console.log("Array original", array);
-// array.pop()
-// console.log('Array retirando o ultimo elemento', array);
-
-// MANIPULANDO ARRAYS
-const array: Array<number> = [ 1, 2, 3, 4 ]  
-
-// o método find() recebe como parametro uma função de callback podendo ser feita de forma isolada(a função)
-// const buscaNum = array.find(num => num === 4)// chama cada elemento como num e só retorna se o numero retorna 4
-// console.log(buscaNum); // retorna apenas o elemento === 4
-
-// const buscaNum = array.find(num => num > 2) // retorna apenas o primeiro elemento que atende a condição
-// console.log(buscaNum); 
-
-// array.forEach(num => console.log(num)) // Recebe como parametro uma função de callback
-
-// array.forEach(num => {
-//     if (num > 2 && num % 2 === 0) {//  num % 2 === 0 - somente numeros pares 
-//         console.log(num * 2);
-//     }
-// })
-
-//O map() permite o uso de funções assincronas e é mais rápido que o forEach
-array.map(num => console.log(num))
