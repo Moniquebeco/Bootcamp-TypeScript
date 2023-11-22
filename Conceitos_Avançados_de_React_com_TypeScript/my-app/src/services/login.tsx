@@ -1,7 +1,7 @@
-export const login = (nome: string):any => {
-    if (!nome || nome === 'undefined' || nome === null ) {
-        alert('A propriedade nome deve ser preenchida');
+export const login = (email: string): void => {
+    if (!email || email === 'undefined' || email === null ) {
+        alert('A propriedade email deve ser preenchida');
     }
-    alert(`Seja bem vinda ${nome}`)
+    alert(`Seja bem vinda ${email}`)
     
 };
