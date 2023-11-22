@@ -6,7 +6,7 @@ export const Header = () => {
         <ChakraProvider>
             <Box minHeight='10vh' backgroundColor='#dca8f9' padding='25px'>
                 <Heading>
-                    <Center>
+                    <Center fontSize={"45px"} fontWeight={400}>
                         Dio Bank
                     </Center>
                 </Heading>

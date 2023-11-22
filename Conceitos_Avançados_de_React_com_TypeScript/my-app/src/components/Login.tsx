@@ -8,7 +8,6 @@ export const Login = () => {
                 <FormControl alignContent={'space-evenly'}>
                     <Input placeholder="Email" type="email"></Input>
                     <Input placeholder="Senha" type="password" margin={'10px 0 20px 0'}></Input>
-
                     <Center>
                         <Button onClick={() => login('Monique')} colorScheme="blue" width={'90%'}>Login</Button>
                     </Center>
