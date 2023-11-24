@@ -1,27 +1,23 @@
-import { useState } from 'react';
-import { ChakraBaseProvider, Box, Flex } from '@chakra-ui/react';
-import { Card } from './components/Card'
-import { Layout } from './components/Layout';
-
-// import styled from 'styled-components';
-// const Box = styled.div`
-// background-color: gray;
-// border-radius: 10px;
-// padding-left: 15px
-// `
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ChakraProvider } from '@chakra-ui/react';
+import { Layout } from './components/Layout'
+import Conta from './pages/Conta';
+import Home from "./pages/Home";
+import ContaInfo from "./pages/ContaInfo";
 
 function App() {
-  const [value, setValue] = useState(0)
-  const [otherValue, setOtherValue] = useState(1)
-
   return (
-    <ChakraBaseProvider>
-      <Layout>
-        <Box padding='25px'>
-          <Card id={1} paragraph='1' details='1'></Card>
-        </Box>
-      </Layout>
-    </ChakraBaseProvider>
+    <BrowserRouter>
+      <ChakraProvider>
+        <Layout>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/conta/:id' element={<Conta />} />
+            <Route path='/containfo' element={<ContaInfo />} />
+          </Routes>
+        </Layout>
+      </ChakraProvider>
+    </BrowserRouter>
   );
 }
 
