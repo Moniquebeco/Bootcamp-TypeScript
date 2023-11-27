@@ -1,7 +1,11 @@
-import './Header.css'
-import { ChakraProvider, Heading, Center, Box } from '@chakra-ui/react'
+import { ChakraProvider, Heading, Center, Box, Button } from '@chakra-ui/react';
+import { useContext } from 'react';
+import { AppContext } from '../../App';
 
 export const Header = () => {
+    const context = useContext(AppContext)
+    console.log(context)
+    
     return (
         <ChakraProvider>
             <Box minHeight='10vh' backgroundColor='#dca8f9' padding='25px'>
