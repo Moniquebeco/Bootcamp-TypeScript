@@ -1,6 +1,6 @@
 import { ChakraProvider, Heading, Center, Box, Button } from '@chakra-ui/react';
 import { useContext } from 'react';
-import { AppContext } from '../../App';
+import { AppContext } from '../AppContext';
 
 export const Header = () => {
     const context = useContext(AppContext)
@@ -14,6 +14,9 @@ export const Header = () => {
                         Dio Bank
                     </Center>
                 </Heading>
+                <Button>
+                    Sair
+                </Button>
             </Box>
         </ChakraProvider>
     )
