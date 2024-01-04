@@ -1,11 +1,27 @@
-import { Box, FormControl, Input, Button, Center } from "@chakra-ui/react";
-import { useState } from "react";
+import { Box, FormControl, Input, Center } from "@chakra-ui/react";
+import { useContext, useState } from "react";
 import { Card } from '../components/Card';
 import { login } from "../services/login";
+import { useNavigate } from "react-router-dom";
+import { AppContext } from "../components/AppContext";
+import { DButton } from "../components/Button/Button";
 
 const Home = () => {
     const [email, setEmail] = useState<string>('')
     const [password, setPassword] = useState<string>('')
+    const { setIsLoggedIn } = useContext(AppContext)
+    const navigate = useNavigate()
+
+    const validateUser = async (email: string) => {
+        const loggedIn = await login(email)
+
+        if (!loggedIn) {
+            return alert('Email inválido')
+        }
+
+        setIsLoggedIn(true)
+        navigate('/conta/0')
+    }
 
     return (
         <Box padding='25px'>
@@ -18,7 +34,7 @@ const Home = () => {
                         <Input placeholder="Email" type="email" value={email} onChange={(event) => setEmail(event.target.value)}></Input>
                         <Input placeholder="Senha" type="password" margin={'10px 0 20px 0'} value={password}></Input>
                         <Center>
-                            <Button onClick={() => login(email)} colorScheme="blue" width={'90%'}>Login</Button>
+                            <DButton onClick={() => {validateUser(email)}}>Entrar</DButton>
                         </Center>
                     </FormControl>
                 </Box>

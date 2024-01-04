@@ -1,23 +1,41 @@
-import { ChakraProvider, Heading, Center, Box, Button } from '@chakra-ui/react';
+import { Heading, Center, Box, Button, Flex, Spacer } from '@chakra-ui/react';
 import { useContext } from 'react';
 import { AppContext } from '../AppContext';
+import { useNavigate } from 'react-router-dom';
 
 export const Header = () => {
-    const context = useContext(AppContext)
-    console.log(context)
-    
+    const { isLoggedIn, setIsLoggedIn } = useContext(AppContext)
+    const navigate = useNavigate()
+    const logout = () => {
+        {
+            setIsLoggedIn(false)
+            navigate('/')
+
+        }
+    }
+
     return (
-        <ChakraProvider>
-            <Box minHeight='10vh' backgroundColor='#dca8f9' padding='25px'>
+        <Flex backgroundColor='#dca8f9' padding='5px'>
+            <Box>
                 <Heading>
                     <Center fontSize={"45px"} fontWeight={400}>
                         Dio Bank
                     </Center>
                 </Heading>
-                <Button>
-                    Sair
-                </Button>
+
+
             </Box>
-        </ChakraProvider>
+            {
+                isLoggedIn && (
+                    <>
+                        <Spacer />
+                        <Button onClick={() => logout()}>
+                            Sair
+                        </Button>
+                    </>
+
+                )
+            }
+        </Flex>
     )
 }
